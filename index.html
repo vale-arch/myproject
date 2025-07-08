@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- ====== theme color ======= -->
+       <script>
+     (function() {
+       try {
+         var color = localStorage.getItem('themeColor');
+         if (color) {
+           var links = document.querySelectorAll('link.alternate-style[title]');
+           for (var i = 0; i < links.length; i++) {
+             links[i].disabled = links[i].getAttribute('title') !== color;
+           }
+         }
+       } catch(e){}
+     })();
+   </script>
     <!-- CSS file links -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skins/color-1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- ===== style switcher ===== -->
     <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
@@ -18,7 +31,7 @@
     <!-- ===== style switcher end ===== -->
     <link rel="stylesheet" href="css/style-switcher.css">
 </head>
-<body">
+<body class="dark">
     <!-- ==== main container start==== -->
      <div class="main container">
      <!-- ======= aside start ====== -->
@@ -82,16 +95,16 @@
                               <p>Birthday : <span>14 feb 2005</span></p>
                             </div>
                             <div class="info-items padd-15">
-                              <p>Age : <span>18</span></p> 
+                              <p>Age : <span>20</span></p> 
                             </div>
                             <div class="info-items padd-15">
                               <p>Website : <span>www.domain.com</span></p>
                             </div>
                             <div class="info-items padd-15">
-                              <p>Phone : <span>+254 712 345 678</span></p>
+                              <p>Phone : <span>+254 113420158</span></p>
                             </div>
                             <div class="info-items padd-15">
-                              <p>Email : <span>info@gmail.com</span></p>
+                              <p>Email : <span>valentinokimutai@gmail.com</span></p>
                             </div>
                             <div class="info-items padd-15">
                               <p>City : <span>Nairobi, Kenya</span></p>
@@ -385,7 +398,7 @@
                     <div class="contact-info-item padd-15">
                      <div class="icon"><i class="fa fa-phone"></i></div>
                      <h4>Contact us on</h4>
-                     <p>+254 712 345 678</p>
+                     <p><a href="tel:+254113420158">+254 113420158</a></p>
                     </div>
                    <!-- Contact info item end -->
                      <!-- Contact info item start -->
@@ -399,7 +412,7 @@
                     <div class="contact-info-item padd-15">
                      <div class="icon"><i class="fa fa-envelope"></i></div>
                      <h4>Email us on</h4>
-                     <p>info@gmail.com</p>
+                     <p><a href="mailto:valentinokimutai@gmail.com">valentinokimutai@gmail.com</a></p>
                     </div>
                    <!-- Contact info item end -->  
                      <!-- Contact info item start -->
@@ -415,29 +428,30 @@
                   <!-- Contact form start -->
                    <div class="row">
                      <div class="contact-form padd-15">
+                        <form action="https://formspree.io/f/mldnyjpq" method="post">
                         <div class="row">
                            <div class="form-item col-6 padd-15">
                               <div class="form-group">
-                             <input type="text" class="form-control" placeholder="Your Name" required>
+                             <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                               </div>
                            </div>
                            <div class="form-item col-6 padd-15">
                               <div class="form-group">
-                             <input type="email" class="form-control" placeholder="Email" required>
+                             <input type="email" name="email" class="form-control" placeholder="Email" required>
                               </div>
                            </div>
                         </div>
                         <div class="row">
                            <div class="form-item col-12 padd-15">
                               <div class="form-group">
-                             <input type="text" class="form-control" placeholder="Subject">
+                             <input type="text" name="subject" class="form-control" placeholder="Subject">
                               </div>
                            </div>
                         </div>
                         <div class="row">
                            <div class="form-item col-12 padd-15">
                               <div class="form-group">
-                               <textarea name="form-control" class="form-control" id="" placeholder="Messages"></textarea>
+                               <textarea name="message" class="form-control" id="" placeholder="Messages"></textarea>
                               </div>
                            </div>
                         </div><div class="row">
@@ -445,6 +459,7 @@
                              <button type="submit" class="btn">Send Message</button>
                            </div>
                         </div>
+                     </form>
                      </div>
                    </div>
                   <!-- Contact form end -->

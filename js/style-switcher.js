@@ -23,7 +23,8 @@ function setActiveStyle(color)
         {
             style.setAttribute("disabled","true")
         }
-    })
+    });
+    localStorage.setItem("themeColor", color)
 }
 /* ======= theme light and dark ========= */
 const dayNight = document.querySelector(".day-night");
@@ -40,5 +41,9 @@ window.addEventListener("load", () => {
     else
     {
         dayNight.querySelector("i").classList.add("fa-moon");
+    }
+    const savedColor = localStorage.getItem("themeColor");
+    if(savedColor){
+        setActiveStyle(savedColor);
     }
 })

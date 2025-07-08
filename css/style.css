@@ -842,3 +842,11 @@ h3.my-profession
         max-width: 100%;
     }
 }
+@media (max-width: 430px) {
+  .home-info .btn {
+    margin-bottom: 15px;
+  }
+  .home-info .btn:last-child {
+    margin-bottom: 0;
+  }
+}
